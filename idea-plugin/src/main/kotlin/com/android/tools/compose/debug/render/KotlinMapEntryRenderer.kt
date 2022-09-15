@@ -24,7 +24,7 @@ import com.intellij.debugger.ui.tree.render.CompoundRendererProvider
 import com.intellij.debugger.ui.tree.render.ValueLabelRenderer
 import com.sun.jdi.ClassType
 import com.sun.jdi.Type
-import org.jetbrains.kotlin.idea.debugger.isInKotlinSources
+import org.jetbrains.kotlin.idea.debugger.core.isInKotlinSources
 import java.util.concurrent.CompletableFuture
 import java.util.function.Function
 

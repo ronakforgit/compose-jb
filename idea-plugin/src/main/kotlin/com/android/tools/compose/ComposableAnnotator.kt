@@ -20,11 +20,11 @@ import com.intellij.openapi.editor.DefaultLanguageHighlighterColors
 import com.intellij.openapi.editor.colors.TextAttributesKey
 import com.intellij.psi.PsiElement
 import org.jetbrains.kotlin.descriptors.DeclarationDescriptor
-import org.jetbrains.kotlin.idea.highlighter.HighlighterExtension
+import org.jetbrains.kotlin.idea.highlighter.KotlinHighlightingVisitorExtension
 import org.jetbrains.kotlin.resolve.calls.model.ResolvedCall
 
 // Used to apply styles for calls to @Composable functions.
-class ComposableHighlighter : HighlighterExtension() {
+class ComposableHighlighter : KotlinHighlightingVisitorExtension() {
     override fun highlightDeclaration(elementToHighlight: PsiElement, descriptor: DeclarationDescriptor): TextAttributesKey? {
         return null
     }

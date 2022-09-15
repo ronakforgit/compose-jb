@@ -47,7 +47,7 @@ import com.sun.jdi.ClassType
 import com.sun.jdi.Type
 import com.sun.jdi.Value
 import org.jetbrains.kotlin.idea.debugger.KotlinClassRenderer
-import org.jetbrains.kotlin.idea.debugger.isInKotlinSources
+import org.jetbrains.kotlin.idea.debugger.core.isInKotlinSources
 import java.util.concurrent.CompletableFuture
 
 /**
