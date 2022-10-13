@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompile
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "1.7.10"
-    id("org.jetbrains.intellij") version "1.8.0"
+    id("org.jetbrains.intellij") version "1.10.0-SNAPSHOT"
     id("org.jetbrains.changelog") version "1.3.1"
 }
 
@@ -20,11 +20,12 @@ sourceSets {
 
 repositories {
     mavenCentral()
+    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
 }
 
 dependencies {
     implementation("org.jetbrains.compose:preview-rpc")
-    implementation(files("lib/compiler-hosted-1.2.0-SNAPSHOT.jar"))
+    implementation("org.jetbrains.compose.compiler:compiler-hosted:1.3.2")
 }
 
 intellij {

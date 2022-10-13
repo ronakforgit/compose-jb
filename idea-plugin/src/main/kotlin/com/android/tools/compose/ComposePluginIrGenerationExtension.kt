@@ -21,6 +21,7 @@ import androidx.compose.compiler.plugins.kotlin.IncompatibleComposeRuntimeVersio
 import com.intellij.openapi.progress.ProcessCanceledException
 import org.jetbrains.kotlin.backend.common.extensions.IrGenerationExtension
 import org.jetbrains.kotlin.backend.common.extensions.IrPluginContext
+import org.jetbrains.kotlin.config.CompilerConfiguration
 import org.jetbrains.kotlin.ir.declarations.IrModuleFragment
 
 @Suppress("INVISIBLE_REFERENCE", "EXPERIMENTAL_IS_NOT_ENABLED")
@@ -28,7 +29,8 @@ import org.jetbrains.kotlin.ir.declarations.IrModuleFragment
 class ComposePluginIrGenerationExtension : IrGenerationExtension {
   override fun generate(moduleFragment: IrModuleFragment, pluginContext: IrPluginContext) {
     try {
-        ComposeIrGenerationExtension(reportsDestination = null,
+        ComposeIrGenerationExtension(configuration = CompilerConfiguration.EMPTY,
+                                     reportsDestination = null,
                                      metricsDestination = null,
                                      generateFunctionKeyMetaClasses = true,
                                      intrinsicRememberEnabled = false).generate(moduleFragment, pluginContext);
