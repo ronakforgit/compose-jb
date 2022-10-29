@@ -60,6 +60,7 @@ tasks {
     }
     withType<KotlinJvmCompile> {
         kotlinOptions.jvmTarget = "17"
+        kotlinOptions.freeCompilerArgs += listOf("-Xopt-in=org.jetbrains.kotlin.utils.addToStdlib.UnsafeCastFunction")
     }
 
     publishPlugin {
