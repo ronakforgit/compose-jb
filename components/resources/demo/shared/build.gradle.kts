@@ -50,13 +50,26 @@ kotlin {
                 implementation(compose.foundation)
                 implementation(compose.material)
                 implementation(compose.runtime)
-                implementation(project(":resources:library"))
+                //implementation("org.jetbrains.compose.components:components-resources:1.3.0-beta04-dev871")//todo should work
+            }
+        }
+        val iosX64Main by getting {
+            dependencies {
+                implementation("org.jetbrains.compose.components:components-resources-iosX64:1.3.0-beta04-dev871")//workaround
+            }
+        }
+        val iosArm64Main by getting {
+            dependencies {
+                implementation("org.jetbrains.compose.components:components-resources-iosArm64:1.3.0-beta04-dev871")//workaround
             }
         }
         val iosMain by getting
         val iosTest by getting
         val iosSimulatorArm64Main by getting {
             dependsOn(iosMain)
+            dependencies {
+                implementation("org.jetbrains.compose.components:components-resources-iosSimulatorArm64:1.3.0-beta04-dev871")//workaround
+            }
         }
         val iosSimulatorArm64Test by getting {
             dependsOn(iosTest)
@@ -64,6 +77,7 @@ kotlin {
         val desktopMain by getting {
             dependencies {
                 implementation(compose.desktop.common)
+                implementation("org.jetbrains.compose.components:components-resources:1.3.0-beta04-dev871")//workaround
             }
         }
         val macosMain by creating {
@@ -71,9 +85,25 @@ kotlin {
         }
         val macosX64Main by getting {
             dependsOn(macosMain)
+            dependencies {
+                implementation("org.jetbrains.compose.components:components-resources-macosX64:1.3.0-beta04-dev871")//workaround
+            }
         }
         val macosArm64Main by getting {
             dependsOn(macosMain)
+            dependencies {
+                implementation("org.jetbrains.compose.components:components-resources-macosArm64:1.3.0-beta04-dev871")//workaround
+            }
+        }
+        val androidMain by getting {
+            dependencies {
+                implementation("org.jetbrains.compose.components:components-resources:1.3.0-beta04-dev871")//workaround
+            }
+        }
+        val jsMain by getting {
+            dependencies {
+                implementation("org.jetbrains.compose.components:components-resources:1.3.0-beta04-dev871")//workaround
+            }
         }
     }
 }
